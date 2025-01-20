@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Редактирование сообщения";
+}
+
+<h1>Редактировать сообщение</h1>
+
+<!-- Форма для ввода сообщения -->
+<form asp-action="Edit" method="post">
+    <div>
+        <label for="message">Введите сообщение:</label>
+        <input type="text" id="message" name="message" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+
+<!-- Динамическое отображение отправленного сообщения -->
+@if (ViewData["Message"] != null)
+{
+    <div class="alert alert-info mt-3">
+        <strong>Ответ:</strong> @ViewData["Message"]
+    </div>
+}
